@@ -10,12 +10,15 @@ public class MakeBricks {
   public boolean makeBricks(int small, int big, int goal) {
 
     int bigSize = 5;
+    int smallSize = 1;
     int remainder = 0;
 
-    if (big > 0) {
+    if(big>0 ){
       remainder = goal % (bigSize);
     }
-    if (((bigSize * big) + (small) >= goal) && (remainder <= small)) {
+    if(big>0 && ((bigSize*big)+(small)>=goal)&&(remainder <= small*smallSize)){
+      return true;
+    } else if (big == 0 && small*smallSize>goal){
       return true;
     }
 
